@@ -1,29 +1,72 @@
+<main class="main">
+  <div class="banner">
+    <h1>Hello, {{ title }}</h1>
+  </div>
+  <div class="content">
+    <div class="button-container">
+      <button class="button" onclick="editar()">Editar</button>
+      <button class="button" onclick="añadir()">Añadir</button>
+      <button class="button" onclick="borrar()">Borrar</button>
+    </div>
+    <div class="section">
+      <h2>Series populares</h2>
+      <div class="series-list">
+        <div class="card">Serie 1</div>
+        <div class="card">Serie 2</div>
+        <div class="card">Serie 3</div>
+        <div class="card">Serie 4</div>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Películas destacadas</h2>
+      <div class="movies-list">
+        <div class="card">Película 1</div>
+        <div class="card">Película 2</div>
+        <div class="card">Película 3</div>
+        <div class="card">Película 4</div>
+      </div>
+    </div>
+  </div>
+</main>
 
-  <main class="main">
-    <div class="banner">
-      <h1>Hello, {{ title }}</h1>
-    </div>
-    <div class="content">
-      <div class="section">
-        <h2>Series populares</h2>
-        <div class="series-list">
-          <div class="card">Serie 1</div>
-          <div class="card">Serie 2</div>
-          <div class="card">Serie 3</div>
-          <div class="card">Serie 4</div>
-        </div>
-      </div>
-      <div class="section">
-        <h2>Películas destacadas</h2>
-        <div class="movies-list">
-          <div class="card">Película 1</div>
-          <div class="card">Película 2</div>
-          <div class="card">Película 3</div>
-          <div class="card">Película 4</div>
-        </div>
-      </div>
-    </div>
-  </main>
+<script>
+  function editar() {
+    // Simplemente muestra un mensaje de alerta por ahora
+    alert("Función de editar activada");
+  }
+
+  function añadir() {
+    // Pregunta al usuario el nombre del nuevo elemento
+    var nuevoElemento = prompt("Introduce el nombre del nuevo elemento:");
+    if (nuevoElemento) {
+      // Crea un nuevo div con el nombre proporcionado
+      var nuevoDiv = document.createElement("div");
+      nuevoDiv.className = "card";
+      nuevoDiv.textContent = nuevoElemento;
+      
+      // Agrega el nuevo div a la lista de series populares
+      var seriesList = document.querySelector(".series-list");
+      seriesList.appendChild(nuevoDiv);
+    }
+  }
+
+  function borrar() {
+    // Pregunta al usuario qué elemento desea eliminar
+    var elementoEliminar = prompt("Introduce el nombre del elemento a eliminar:");
+    if (elementoEliminar) {
+      // Busca todos los elementos que coincidan con el nombre proporcionado
+      var elementos = document.querySelectorAll(".card");
+      elementos.forEach(function(elemento) {
+        if (elemento.textContent === elementoEliminar) {
+          // Elimina el elemento si se encuentra
+          elemento.parentNode.removeChild(elemento);
+        }
+      });
+    }
+  }
+</script>
+
+
 
 
 
