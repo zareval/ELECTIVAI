@@ -1,18 +1,34 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditarActorComponent } from './editar-actor.component';
+
+import {RouterTestingModule} from '@angular/router/testing'
+import { AppComponent } from '../../app.component';
+import { CrearActorComponent } from '../crear-actor/crear-actor.component';
 
 describe('EditarActorComponent', () => {
-  let component: EditarActorComponent;
-  let fixture: ComponentFixture<EditarActorComponent>;
+  beforeEach(()=> TestBed.configureTestingModule({
+    imports: [RouterTestingModule],
+    declarations: [AppComponent]
+  }));
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  })
+}
+
+describe('CrearActorComponent', () => {
+  let component: CrearActorComponent;
+  let fixture: ComponentFixture<CrearActorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EditarActorComponent]
+      imports: [CrearActorComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(EditarActorComponent);
+    fixture = TestBed.createComponent(CrearActorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,3 +37,4 @@ describe('EditarActorComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
