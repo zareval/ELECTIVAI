@@ -12,7 +12,7 @@ import { PeliculasCrearComponent } from './peliculas/peliculas-crear/peliculas-c
 import { PeliculasEditarComponent } from './peliculas/peliculas-editar/peliculas-editar.component';
 import { PeliculasEliminarComponent } from './peliculas/peliculas-eliminar/peliculas-eliminar.component';
 import { PeliculasListarComponent } from './peliculas/peliculas-listar/peliculas-listar.component';
-import { SeriesCrearComponent } from './series/series-crear/series-crear.component';
+import { seriesCrearComponent } from './series/series-crear/series-crear.component';
 import { seriesEditarComponent } from './series/series-editar/series-editar.component';
 import { seriesEliminarComponent } from './series/series-eliminar/series-eliminar.component';
 
@@ -67,7 +67,7 @@ export const routes: Routes = [
     },
     {
         path:'crearSeries',
-        component:SeriesCrearComponent,
+        component:seriesCrearComponent,
     },
     {
         path:'editarSerie',
