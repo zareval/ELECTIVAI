@@ -1,4 +1,4 @@
-export class Peliculas{
+export class Series{
     nombre : string;
     genero : string;
     duracion : string;
@@ -12,7 +12,7 @@ export class Peliculas{
     idPelicula : number;
 
 
-    public constructor (idPelicula:number,nombre:string,genero:string,duracion : string,pais : string,f_estreno : number,trailer : URL,e_produccion : URL,poster : File,director : string,protagonistas : string){
+    public constructor (idSeries:number,nombre:string,genero:string,duracion : string,pais : string,f_estreno : number,trailer : URL,e_produccion : URL,poster : File,director : string,protagonistas : string){
         
         this.nombre = nombre;
         this.genero = genero;
@@ -24,7 +24,7 @@ export class Peliculas{
         this.poster = poster;
         this.director = director;
         this.protagonistas = protagonistas;
-        this.idPelicula = idPelicula;
+        this.idPelicula = idSeries;
 
 
 
