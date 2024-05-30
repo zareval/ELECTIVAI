@@ -4,7 +4,7 @@
         <h3>Eliminar director</h3>
       </header>
       <section class="container">
-        <form [formGroup]="directorForm" (ngSubmit)="!directorForm.invalid && eliminardirector(directorForm.value)">
+        <form [formGroup]="directorForm" (ngSubmit)="!directorForm.invalid && eliminarDirector(directorForm.value)">
           <div class="row">
             <div class="col col-12">
               <div class="form-group mx-sm-3 mb-2">
@@ -19,3 +19,4 @@
       </section>
     </div>
   </div>
+  

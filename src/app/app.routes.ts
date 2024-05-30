@@ -4,7 +4,7 @@ import { CrearActorComponent } from './actores/crear-actor/crear-actor.component
 import { ListarActorComponent } from './actores/listar-actor/listar-actor.component';
 import { EditarActorComponent } from './actores/editar-actor/editar-actor.component';
 import { EliminarActorComponent } from './actores/eliminar-actor/eliminar-actor.component';
-import { CrearDirectorComponent } from './directores/crear-director/crear-director.component';
+import { CreardirectorComponent } from './directores/crear-director/crear-director.component';
 import { ListarDirectorComponent } from './directores/listar-director/listar-director.component';
 import { EditarDirectorComponent } from './directores/editar-director/editar-director.component';
 import { EliminarDirectorComponent } from './directores/eliminar-director/eliminar-director.component';
@@ -36,7 +36,7 @@ export const routes: Routes = [
     },
     {
         path:'crearDirector',
-        component:CrearDirectorComponent,
+        component:CreardirectorComponent,
     },
     {
         path:'editarDirector',

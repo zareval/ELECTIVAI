@@ -4,7 +4,7 @@
         <h3>Nuevo director</h3>
       </header>
       <section class="container">
-        <form [formGroup]="directorForm" (ngSubmit)="!directorForm.invalid && creardirector(directorForm.value)">
+        <form [formGroup]="directorForm" (ngSubmit)="!directorForm.invalid && crearDirector(directorForm.value)">
           <div class="row">
             <div class="col col-12">
   
@@ -13,8 +13,8 @@
                 <input id="nombre" class="form-control" formControlName="nombre" maxlength="" autocomplete="off"
                   placeholder="Ingrese el nombre del director" />
                 <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-                directorForm.get('nombre')!.hasError('required') &&
-                directorForm.get('nombre')!.touched">
+                  directorForm.get('nombre')!.hasError('required') &&
+                  directorForm.get('nombre')!.touched">
                   Campo requerido
                 </div>
                 <div class="alert alert-danger alert-dismissible fade show"
@@ -24,12 +24,12 @@
               </div>
               
               <div class="form-group mx-sm-3 mb-2">
-                <label for="nacionalidad">nacionalidad</label>
-                <input id="nacionalidad"  class="form-control" placeholder="nacionalidad" maxlength="30"
+                <label for="nacionalidad">Nacionalidad</label>
+                <input id="nacionalidad"  class="form-control" placeholder="Nacionalidad" maxlength="30"
                    formControlName="nacionalidad" />
                 <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-                directorForm.get('nacionalidad')!.hasError('required') &&
-                directorForm.get('nacionalidad')!.touched">
+                  directorForm.get('nacionalidad')!.hasError('required') &&
+                  directorForm.get('nacionalidad')!.touched">
                   Campo requerido
                 </div>
                 <div class="alert alert-danger alert-dismissible fade show"
@@ -38,14 +38,13 @@
                 </div>
               </div>
   
-  
               <div class="form-group mx-sm-3 mb-2">
                 <label for="f_nacimiento">Fecha de nacimiento</label>
-                <input id="f_nacimiento"  class="form-control" placeholder="f_nacimiento" maxlength="8"
+                <input id="f_nacimiento"  class="form-control" placeholder="Fecha de nacimiento" maxlength="8"
                    formControlName="f_nacimiento" />
                 <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-                directorForm.get('f_nacimiento')!.hasError('required') &&
-                directorForm.get('f_nacimiento')!.touched">
+                  directorForm.get('f_nacimiento')!.hasError('required') &&
+                  directorForm.get('f_nacimiento')!.touched">
                   Campo requerido
                 </div>
                 <div class="alert alert-danger alert-dismissible fade show"
@@ -53,14 +52,14 @@
                   El contenido es muy corto.
                 </div>
               </div>
-
+  
               <div class="form-group mx-sm-3 mb-2">
                 <label for="biografia">Biografia</label>
                 <input id="biografia" class="form-control" formControlName="biografia" maxlength="" autocomplete="off"
                   placeholder="Ingrese la biografia del director" />
                 <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-                directorForm.get('biografia')!.hasError('required') &&
-                directorForm.get('biografia')!.touched">
+                  directorForm.get('biografia')!.hasError('required') &&
+                  directorForm.get('biografia')!.touched">
                   Campo requerido
                 </div>
                 <div class="alert alert-danger alert-dismissible fade show"
@@ -73,7 +72,8 @@
           </div>
           <br />
           <button type="submit" class="btn btn-primary" [disabled]="!directorForm.valid">Crear</button>&nbsp;
-         </form>
+        </form>
       </section>
     </div>
   </div>
+  

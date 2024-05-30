@@ -4,7 +4,7 @@
         <h3>Editar director</h3>
       </header>
       <section class="container">
-        <form [formGroup]="directoresForm" (ngSubmit)="!directoresForm.invalid && actualizardirector(directoresForm.value)">
+        <form [formGroup]="directoresForm" (ngSubmit)="!directoresForm.invalid && actualizarDirector(directoresForm.value)">
           <div class="row">
   
             <div class="col col-12">
@@ -13,8 +13,8 @@
                 <input id="nombre" class="form-control" formControlName="nombre" maxlength="20"
                   placeholder="Nombre" />
                 <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-                directoresForm.get('nombre')!.hasError('required') &&
-                directoresForm.get('nombre')!.touched">
+                  directoresForm.get('nombre')!.hasError('required') &&
+                  directoresForm.get('nombre')!.touched">
                   Campo requerido
                 </div>
                 <div class="alert alert-danger alert-dismissible fade show"
@@ -25,11 +25,11 @@
   
               <div class="form-group mx-sm-3 mb-2">
                 <label for="Nacionalidad">Nacionalidad</label>
-                <input id="Nacionalidad"  class="form-control" placeholder="Nacionalidad" maxlength="30"
+                <input id="Nacionalidad" class="form-control" placeholder="Nacionalidad" maxlength="30"
                    formControlName="Nacionalidad" />
                 <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-                directoresForm.get('Nacionalidad')!.hasError('required') &&
-                directoresForm.get('Nacionalidad')!.touched">
+                  directoresForm.get('Nacionalidad')!.hasError('required') &&
+                  directoresForm.get('Nacionalidad')!.touched">
                   Campo requerido
                 </div>
                 <div class="alert alert-danger alert-dismissible fade show"
@@ -41,8 +41,8 @@
           </div>
           <br />
           <button type="submit" class="btn btn-primary" [disabled]="!directoresForm.valid">Actualizar</button>&nbsp;
-         </form>
+        </form>
       </section>
     </div>
   </div>
-    
+  
