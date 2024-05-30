@@ -1,1 +1,21 @@
-<p>eliminar-director works!</p>
+<div class="container-fluid">
+    <div class="col-lg-6 offset-3">
+      <header>
+        <h3>Eliminar director</h3>
+      </header>
+      <section class="container">
+        <form [formGroup]="directorForm" (ngSubmit)="!directorForm.invalid && eliminardirector(directorForm.value)">
+          <div class="row">
+            <div class="col col-12">
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="id">ID del director</label>
+                <input id="id" class="form-control" formControlName="id" readonly />
+              </div>
+            </div>
+          </div>
+          <br />
+          <button type="submit" class="btn btn-danger" [disabled]="!directorForm.valid">Eliminar</button>&nbsp;
+        </form>
+      </section>
+    </div>
+  </div>
