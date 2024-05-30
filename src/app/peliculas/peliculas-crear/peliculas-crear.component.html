@@ -1,1 +1,79 @@
-<p>peliculas-crear works!</p>
+<div class="container-fluid">
+    <div class="col-lg-6 offset-3">
+      <header>
+        <h3>Nuevo peliculas</h3>
+      </header>
+      <section class="container">
+        <form [formGroup]="peliculasForm" (ngSubmit)="!peliculasForm.invalid && crearpeliculas(peliculasForm.value)">
+          <div class="row">
+            <div class="col col-12">
+  
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" class="form-control" formControlName="nombre" maxlength="" autocomplete="off"
+                  placeholder="Ingrese el nombre del peliculas" />
+                <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+                peliculasForm.get('nombre')!.hasError('required') &&
+                peliculasForm.get('nombre')!.touched">
+                  Campo requerido
+                </div>
+                <div class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="peliculasForm.get('nombre')!.hasError('minlength')">
+                  El contenido es muy corto.
+                </div>
+              </div>
+              
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="nacionalidad">nacionalidad</label>
+                <input id="nacionalidad"  class="form-control" placeholder="nacionalidad" maxlength="30"
+                   formControlName="nacionalidad" />
+                <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+                peliculasForm.get('nacionalidad')!.hasError('required') &&
+                peliculasForm.get('nacionalidad')!.touched">
+                  Campo requerido
+                </div>
+                <div class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="peliculasForm.get('nacionalidad')!.hasError('minlength')">
+                  El contenido es muy corto.
+                </div>
+              </div>
+  
+  
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="f_nacimiento">Fecha de nacimiento</label>
+                <input id="f_nacimiento"  class="form-control" placeholder="f_nacimiento" maxlength="8"
+                   formControlName="f_nacimiento" />
+                <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+                peliculasForm.get('f_nacimiento')!.hasError('required') &&
+                peliculasForm.get('f_nacimiento')!.touched">
+                  Campo requerido
+                </div>
+                <div class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="peliculasForm.get('f_nacimiento')!.hasError('minlength')">
+                  El contenido es muy corto.
+                </div>
+              </div>
+
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="biografia">Biografia</label>
+                <input id="biografia" class="form-control" formControlName="biografia" maxlength="" autocomplete="off"
+                  placeholder="Ingrese la biografia del peliculas" />
+                <div class="alert alert-danger alert-dismissible fade show" *ngIf="
+                peliculasForm.get('biografia')!.hasError('required') &&
+                peliculasForm.get('biografia')!.touched">
+                  Campo requerido
+                </div>
+                <div class="alert alert-danger alert-dismissible fade show"
+                  *ngIf="peliculasForm.get('biografia')!.hasError('minlength')">
+                  El contenido es muy corto.
+                </div>
+              </div>
+  
+            </div>
+          </div>
+          <br />
+          <button type="submit" class="btn btn-primary" [disabled]="!peliculasForm.valid">Crear</button>&nbsp;
+         </form>
+      </section>
+    </div>
+  </div>
