@@ -9,7 +9,7 @@ export class Series{
     poster : File| null | undefined;
     director : string;
     protagonistas : string;
-    idPelicula : number;
+    idSeries : number;
 
 
     public constructor (idSeries:number,nombre:string,genero:string,duracion : string,pais : string,f_estreno : number,trailer : URL,e_produccion : URL,poster : File,director : string,protagonistas : string){
@@ -24,7 +24,7 @@ export class Series{
         this.poster = poster;
         this.director = director;
         this.protagonistas = protagonistas;
-        this.idPelicula = idSeries;
+        this.idSeries = idSeries;
 
 
 
