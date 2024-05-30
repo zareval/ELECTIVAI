@@ -14,7 +14,7 @@ import { PeliculasEliminarComponent } from './peliculas/peliculas-eliminar/pelic
 import { PeliculasListarComponent } from './peliculas/peliculas-listar/peliculas-listar.component';
 import { SeriesCrearComponent } from './series/series-crear/series-crear.component';
 import { SeriesEditarComponent } from './series/series-editar/series-editar.component';
-import { SeriesEliminarComponent } from './series/series-eliminar/series-eliminar.component';
+import { seriesEliminarComponent } from './series/series-eliminar/series-eliminar.component';
 
 export const routes: Routes = [
     {
@@ -75,7 +75,7 @@ export const routes: Routes = [
     },
     {
         path:'eliminarSerie',
-        component:SeriesEliminarComponent
+        component:seriesEliminarComponent
     },
     
 ];
