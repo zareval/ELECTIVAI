@@ -33,7 +33,7 @@ export class CrearActorComponent implements OnInit {
         alert('Actor creado con éxito');
         this.actorForm.reset();
       },
-    );
-  }
+    );
+  }
 
 }
