@@ -13,7 +13,7 @@ import { PeliculasEditarComponent } from './peliculas/peliculas-editar/peliculas
 import { PeliculasEliminarComponent } from './peliculas/peliculas-eliminar/peliculas-eliminar.component';
 import { PeliculasListarComponent } from './peliculas/peliculas-listar/peliculas-listar.component';
 import { SeriesCrearComponent } from './series/series-crear/series-crear.component';
-import { SeriesEditarComponent } from './series/series-editar/series-editar.component';
+import { seriesEditarComponent } from './series/series-editar/series-editar.component';
 import { seriesEliminarComponent } from './series/series-eliminar/series-eliminar.component';
 
 export const routes: Routes = [
@@ -71,7 +71,7 @@ export const routes: Routes = [
     },
     {
         path:'editarSerie',
-        component:SeriesEditarComponent,
+        component:seriesEditarComponent,
     },
     {
         path:'eliminarSerie',
