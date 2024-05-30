@@ -31,7 +31,7 @@ a: any;
   }
 
   onEditarNavigate(id:number){
-    this.routerPath.navigate([`/vehiculos/editar/${id}`]);
+    this.routerPath.navigate([`/directores/listar-director/${id}`]);
   }
 
 }
