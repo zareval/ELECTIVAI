@@ -14,6 +14,7 @@ import {Router, RouterModule} from '@angular/router';
 })
 export class ListarActorComponent {
   actores :Array<Actores>=[]
+a: any;
   constructor(private routerPath: Router,private ActoresSerService:ActoresSerService){
 
   }

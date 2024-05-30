@@ -3,32 +3,32 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {RouterTestingModule} from '@angular/router/testing'
 import { AppComponent } from '../../app.component';
-import { CrearActorComponent } from '../crear-actor/crear-actor.component';
+import { EditarActorComponent } from './editar-actor.component';
 
-describe('EditarActorComponent', () => {
-  beforeEach(()=> TestBed.configureTestingModule({
+describe('AppComponent',() =>{
+  beforeEach(() => TestBed.configureTestingModule({
     imports: [RouterTestingModule],
-    declarations: [AppComponent]
+    declarations:[AppComponent]
   }));
 
-  it('should create the app', () => {
+  it('should create the app', () =>{
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
+    const app= fixture.componentInstance;
     expect(app).toBeTruthy();
   })
-}
+})
 
-describe('CrearActorComponent', () => {
-  let component: CrearActorComponent;
-  let fixture: ComponentFixture<CrearActorComponent>;
+describe('EditarActorComponent', () => {
+  let component: EditarActorComponent;
+  let fixture: ComponentFixture<EditarActorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CrearActorComponent]
+      imports: [EditarActorComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CrearActorComponent);
+    fixture = TestBed.createComponent(EditarActorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
