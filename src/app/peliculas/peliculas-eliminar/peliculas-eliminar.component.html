@@ -1,1 +1,21 @@
-<p>peliculas-eliminar works!</p>
+<div class="container-fluid">
+    <div class="col-lg-6 offset-3">
+      <header>
+        <h3>Eliminar pelicula</h3>
+      </header>
+      <section class="container">
+        <form [formGroup]="peliculaForm" (ngSubmit)="!peliculaForm.invalid && eliminarpelicula(peliculaForm.value)">
+          <div class="row">
+            <div class="col col-12">
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="id">ID del pelicula</label>
+                <input id="id" class="form-control" formControlName="id" readonly />
+              </div>
+            </div>
+          </div>
+          <br />
+          <button type="submit" class="btn btn-danger" [disabled]="!peliculaForm.valid">Eliminar</button>&nbsp;
+        </form>
+      </section>
+    </div>
+  </div>
