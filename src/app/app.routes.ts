@@ -8,6 +8,13 @@ import { CreardirectorComponent } from './directores/crear-director/crear-direct
 import { ListarDirectorComponent } from './directores/listar-director/listar-director.component';
 import { EditarDirectorComponent } from './directores/editar-director/editar-director.component';
 import { EliminarDirectorComponent } from './directores/eliminar-director/eliminar-director.component';
+import { PeliculasCrearComponent } from './peliculas/peliculas-crear/peliculas-crear.component';
+import { PeliculasEditarComponent } from './peliculas/peliculas-editar/peliculas-editar.component';
+import { PeliculasEliminarComponent } from './peliculas/peliculas-eliminar/peliculas-eliminar.component';
+import { PeliculasListarComponent } from './peliculas/peliculas-listar/peliculas-listar.component';
+import { SeriesCrearComponent } from './series/series-crear/series-crear.component';
+import { SeriesEditarComponent } from './series/series-editar/series-editar.component';
+import { SeriesEliminarComponent } from './series/series-eliminar/series-eliminar.component';
 
 export const routes: Routes = [
     {
@@ -27,10 +34,6 @@ export const routes: Routes = [
         component:EliminarActorComponent,
     },
     {
-        path:'eliminarActor',
-        component:EliminarActorComponent,
-    },
-    {
         path:'listarDirector',
         component:ListarDirectorComponent,
     },
@@ -44,6 +47,35 @@ export const routes: Routes = [
     },
     {
         path:'eliminarDirector',
-        component:EliminarDirectorComponent
+        component:EliminarDirectorComponent,
     },
+    {
+        path:'crearPelicula',
+        component:PeliculasCrearComponent,
+    },
+    {
+        path:'editarPelicula',
+        component:PeliculasEditarComponent,
+    },
+    {
+        path:'eliminarPelicula',
+        component:PeliculasEliminarComponent
+    },
+    {
+        path:'listarPelicula',
+        component:PeliculasListarComponent,
+    },
+    {
+        path:'crearSeries',
+        component:SeriesCrearComponent,
+    },
+    {
+        path:'editarSerie',
+        component:SeriesEditarComponent,
+    },
+    {
+        path:'eliminarSerie',
+        component:SeriesEliminarComponent
+    },
+    
 ];
