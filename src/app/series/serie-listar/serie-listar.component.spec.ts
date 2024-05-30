@@ -1,32 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeriesCrearComponent } from './serie-listar.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from '../../app.component';
+import { SerieListarComponent } from './serie-listar.component';
 
-describe('AppComponent',() =>{
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations:[AppComponent]
-  }));
-
-  it('should create the app', () =>{
-    const fixture = TestBed.createComponent(AppComponent);
-    const app= fixture.componentInstance;
-    expect(app).toBeTruthy();
-  })
-})
 describe('SerieListarComponent', () => {
-  let component: SeriesCrearComponent;
-  let fixture: ComponentFixture<SeriesCrearComponent>;
+  let component: SerieListarComponent;
+  let fixture: ComponentFixture<SerieListarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SeriesCrearComponent]
+      imports: [SerieListarComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SeriesCrearComponent);
+    fixture = TestBed.createComponent(SerieListarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
