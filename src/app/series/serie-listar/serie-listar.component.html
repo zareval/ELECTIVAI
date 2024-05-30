@@ -1,1 +1,39 @@
-<p>serie-listar works!</p>
+<div>
+    <h3>Listado de series</h3>
+
+<div class="col-12">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>genero</th>
+                <th>duracion</th>
+                <th>pais</th>
+                <th>f_estreno</th>
+                <th>trailer</th>
+                <th>e_produccion</th>
+                <th>poster</th>
+                <th>director</th>
+                <th>protagonistas</th>
+                <th>ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor= 'let p of series'>
+                <td>{{p.Nombre}}</td>
+                <td>{{p.genero}}</td>
+                <td>{{p.duracion}}</td>
+                <td>{{p.pais}}</td>
+                <td>{{p.f_estreno}}</td>
+                <td>{{p.trailer}}</td>
+                <td>{{p.e_produccion}}</td>
+                <td>{{p.poster}}</td>
+                <td>{{p.director}}</td>
+                <td>{{p.protagonistas}}</td>
+                <td>{{p.idPelicula}}</td>
+                <td><button type="button" class="btn btn-primary" (click)="onEditarNavigate(a.idpelicula)" title="Editar">Editar</button>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
