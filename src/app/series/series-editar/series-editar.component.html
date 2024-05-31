@@ -1,98 +1,68 @@
 <div class="container-fluid">
-    <div class="col-lg-6 offset-3">
-      <header>
-        <h3>Editar series</h3>
-      </header>
-      <section class="container">
-        <form [formGroup]="seriesForm" (ngSubmit)="!seriesForm.invalid && actualizarseries(seriesForm.value)">
-          <div class="row">
-  
-            <div class="col col-12">
-              <div class="form-group mx-<h1>Editar Serie</h1>
-
-                <form [formGroup]="seriesForm" (ngSubmit)="actualizarseries(seriesForm.value)">
-                
-                  <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Ingrese el nombre">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="genero">Género:</label>
-                    <input type="text" class="form-control" id="genero" formControlName="genero" placeholder="Ingrese el género">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="duracion">Duración (minutos):</label>
-                    <input type="number" class="form-control" id="duracion" formControlName="duracion" placeholder="Ingrese la duración">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="pais">País:</label>
-                    <input type="text" class="form-control" id="pais" formControlName="pais" placeholder="Ingrese el país">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="f_estreno">Fecha de estreno (YYYY-MM-DD):</label>
-                    <input type="date" class="form-control" id="f_estreno" formControlName="f_estreno" placeholder="Ingrese la fecha">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="trailer">Trailer URL:</label>
-                    <input type="url" class="form-control" id="trailer" formControlName="trailer" placeholder="Ingrese la URL del trailer">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="poster">Poster URL:</label>
-                    <input type="url" class="form-control" id="poster" formControlName="poster" placeholder="Ingrese la URL del poster">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="director">Director:</label>
-                    <input type="text" class="form-control" id="director" formControlName="director" placeholder="Ingrese el director">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="protagonistas">Protagonistas (separados por comas):</label>
-                    <textarea class="form-control" id="protagonistas" formControlName="protagonistas" rows="3"></textarea>
-                  </div>
-                
-                  <button type="submit" class="btn btn-primary">Actualizar Serie</button>
-                </form>
-                sm-3 mb-2">
-                <label for="nombre">Nombre</label>
-                <input id="nombre" class="form-control" formControlName="nombre" maxlength="20"
-                  placeholder="Nombre" />
-                <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-                seriesForm.get('nombre')!.hasError('required') &&
-                seriesForm.get('nombre')!.touched">
-                  Campo requerido
-                </div>
-                <div class="alert alert-danger alert-dismissible fade show"
-                  *ngIf="seriesForm.get('nombre')!.hasError('minlength')">
-                  El contenido es muy corto.
-                </div>
+  <div class="col-lg-6 offset-3">
+    <header>
+      <h3>Editar Serie</h3>
+    </header>
+    <section class="container">
+      <form [formGroup]="seriesForm" (ngSubmit)="!seriesForm.invalid && actualizarSeries(seriesForm.value)">
+        <div class="row">
+          <div class="col col-12">
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" type="text" class="form-control" formControlName="nombre" maxlength="20" placeholder="Ingrese el nombre" />
+              <div class="alert alert-danger alert-dismissible fade show" *ngIf="seriesForm.get('nombre')!.hasError('required') && seriesForm.get('nombre')!.touched">
+                Campo requerido
               </div>
-  
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="Nacionalidad">Nacionalidad</label>
-                <input id="Nacionalidad"  class="form-control" placeholder="Nacionalidad" maxlength="30"
-                   formControlName="Nacionalidad" />
-                <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-                seriesForm.get('Nacionalidad')!.hasError('required') &&
-                seriesForm.get('Nacionalidad')!.touched">
-                  Campo requerido
-                </div>
-                <div class="alert alert-danger alert-dismissible fade show"
-                  *ngIf="seriesForm.get('Nacionalidad')!.hasError('minlength')">
-                  El contenido es muy corto.
-                </div>
+              <div class="alert alert-danger alert-dismissible fade show" *ngIf="seriesForm.get('nombre')!.hasError('minlength')">
+                El contenido es muy corto.
               </div>
             </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="genero">Género</label>
+              <input id="genero" type="text" class="form-control" formControlName="genero" placeholder="Ingrese el género" />
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="duracion">Duración (minutos)</label>
+              <input id="duracion" type="number" class="form-control" formControlName="duracion" placeholder="Ingrese la duración" />
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="pais">País</label>
+              <input id="pais" type="text" class="form-control" formControlName="pais" placeholder="Ingrese el país" />
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="f_estreno">Fecha de estreno (YYYY-MM-DD)</label>
+              <input id="f_estreno" type="date" class="form-control" formControlName="f_estreno" placeholder="Ingrese la fecha" />
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="trailer">Trailer URL</label>
+              <input id="trailer" type="url" class="form-control" formControlName="trailer" placeholder="Ingrese la URL del trailer" />
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="poster">Poster URL</label>
+              <input id="poster" type="url" class="form-control" formControlName="poster" placeholder="Ingrese la URL del poster" />
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="director">Director</label>
+              <input id="director" type="text" class="form-control" formControlName="director" placeholder="Ingrese el director" />
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="protagonistas">Protagonistas (separados por comas)</label>
+              <textarea id="protagonistas" class="form-control" formControlName="protagonistas" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="!seriesForm.valid">Actualizar Serie</button>
+            <a [routerLink]="['/series']" class="btn btn-secondary">Cancelar</a>
           </div>
-          <br />
-          <button type="submit" class="btn btn-primary" [disabled]="!seriesForm.valid">Actualizar</button>&nbsp;
-         </form>
-      </section>
-    </div>
+        </div>
+      </form>
+    </section>
   </div>
+</div>

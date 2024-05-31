@@ -10,7 +10,7 @@ import { SeriesService } from '../series.service';
   selector: 'app-eliminar-serie',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './series-eliminar.component.html',
+  templateUrl: './series-eliminar.component.html', // Verifica que esta ruta esté correcta
   styleUrls: ['./series-eliminar.component.css']
 })
 export class seriesEliminarComponent implements OnInit {
