@@ -1,39 +1,27 @@
-<div>
-    <h3>Listado de peliculas</h3>
+<h1>Listado de Películas</h1>
 
-<div class="col-12">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>genero</th>
-                <th>duracion</th>
-                <th>pais</th>
-                <th>f_estreno</th>
-                <th>trailer</th>
-                <th>e_produccion</th>
-                <th>poster</th>
-                <th>director</th>
-                <th>protagonistas</th>
-                <th>ID</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor= 'let p of peliculas'>
-                <td>{{p.Nombre}}</td>
-                <td>{{p.genero}}</td>
-                <td>{{p.duracion}}</td>
-                <td>{{p.pais}}</td>
-                <td>{{p.f_estreno}}</td>
-                <td>{{p.trailer}}</td>
-                <td>{{p.e_produccion}}</td>
-                <td>{{p.poster}}</td>
-                <td>{{p.director}}</td>
-                <td>{{p.protagonistas}}</td>
-                <td>{{p.idPelicula}}</td>
-                <td><button type="button" class="btn btn-primary" (click)="onEditarNavigate(a.idpelicula)" title="Editar">Editar</button>&nbsp;</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Género</th>
+      <th>Duración</th>
+      <th>País</th>
+      <th>Fecha de estreno</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pelicula of pelicula">
+      <td>{{ pelicula.idPelicula }}</td> <td>{{ pelicula.nombre }}</td>
+      <td>{{ pelicula.genero }}</td>
+      <td>{{ pelicula.duracion }} minutos</td>
+      <td>{{ pelicula.pais }}</td>
+      <td>{{ pelicula.f_estreno }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="onEditarNavigate(pelicula.idPelicula)">Editar</button>
+        <button class="btn btn-danger">Eliminar</button> </td>
+    </tr>
+  </tbody>
+</table>

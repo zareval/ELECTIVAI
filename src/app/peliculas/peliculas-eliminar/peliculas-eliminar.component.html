@@ -1,21 +1,14 @@
-<div class="container-fluid">
-    <div class="col-lg-6 offset-3">
-      <header>
-        <h3>Eliminar pelicula</h3>
-      </header>
-      <section class="container">
-        <form [formGroup]="peliculaForm" (ngSubmit)="!peliculaForm.invalid && eliminarpelicula(peliculaForm.value)">
-          <div class="row">
-            <div class="col col-12">
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="id">ID del pelicula</label>
-                <input id="id" class="form-control" formControlName="id" readonly />
-              </div>
-            </div>
-          </div>
-          <br />
-          <button type="submit" class="btn btn-danger" [disabled]="!peliculaForm.valid">Eliminar</button>&nbsp;
-        </form>
-      </section>
-    </div>
+<h1>Eliminar Película</h1>
+
+<p>¿Está seguro que desea eliminar la película?</p>
+
+<form [formGroup]="peliculaForm" (ngSubmit)="eliminarPelicula(peliculaForm.value)">
+
+  <div class="form-group">
+    <label for="id">ID de la Película (solo lectura):</label>
+    <input type="number" class="form-control" id="id" formControlName="id" readonly>
   </div>
+
+  <button type="submit" class="btn btn-danger">Eliminar Película</button>
+  <a class="btn btn-secondary" [routerLink]="['/pelicula']">Cancelar</a>
+</form>
