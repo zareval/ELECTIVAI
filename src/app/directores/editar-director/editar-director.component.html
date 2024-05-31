@@ -1,48 +1,38 @@
-<div class="container-fluid">
-    <div class="col-lg-6 offset-3">
-      <header>
-        <h3>Editar director</h3>
-      </header>
-      <section class="container">
-        <form [formGroup]="directoresForm" (ngSubmit)="!directoresForm.invalid && actualizarDirector(directoresForm.value)">
-          <div class="row">
-  
-            <div class="col col-12">
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="nombre">Nombre</label>
-                <input id="nombre" class="form-control" formControlName="nombre" maxlength="20"
-                  placeholder="Nombre" />
-                <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-                  directoresForm.get('nombre')!.hasError('required') &&
-                  directoresForm.get('nombre')!.touched">
-                  Campo requerido
-                </div>
-                <div class="alert alert-danger alert-dismissible fade show"
-                  *ngIf="directoresForm.get('nombre')!.hasError('minlength')">
-                  El contenido es muy corto.
-                </div>
-              </div>
-  
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="Nacionalidad">Nacionalidad</label>
-                <input id="Nacionalidad" class="form-control" placeholder="Nacionalidad" maxlength="30"
-                   formControlName="Nacionalidad" />
-                <div class="alert alert-danger alert-dismissible fade show" *ngIf="
-                  directoresForm.get('Nacionalidad')!.hasError('required') &&
-                  directoresForm.get('Nacionalidad')!.touched">
-                  Campo requerido
-                </div>
-                <div class="alert alert-danger alert-dismissible fade show"
-                  *ngIf="directoresForm.get('Nacionalidad')!.hasError('minlength')">
-                  El contenido es muy corto.
-                </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <button type="submit" class="btn btn-primary" [disabled]="!directoresForm.valid">Actualizar</button>&nbsp;
-        </form>
-      </section>
+<div class="container">
+  <h2>Editar Director</h2>
+  <form [formGroup]="directoresForm" (ngSubmit)="actualizarDirector(directoresForm.value)">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" type="text" class="form-control" formControlName="nombre">
+      <div *ngIf="directoresForm.get('nombre')?.invalid && directoresForm.get('nombre')?.touched" class="text-danger">
+        Nombre es requerido.
+      </div>
     </div>
-  </div>
-  
+
+    <div class="form-group">
+      <label for="nacionalidad">Nacionalidad</label>
+      <input id="nacionalidad" type="text" class="form-control" formControlName="nacionalidad">
+      <div *ngIf="directoresForm.get('nacionalidad')?.invalid && directoresForm.get('nacionalidad')?.touched" class="text-danger">
+        Nacionalidad es requerida.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+      <input id="fecha_nacimiento" type="date" class="form-control" formControlName="fecha_nacimiento">
+      <div *ngIf="directoresForm.get('fecha_nacimiento')?.invalid && directoresForm.get('fecha_nacimiento')?.touched" class="text-danger">
+        Fecha de nacimiento es requerida.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="biografia">Biografía</label>
+      <textarea id="biografia" class="form-control" formControlName="biografia"></textarea>
+      <div *ngIf="directoresForm.get('biografia')?.invalid && directoresForm.get('biografia')?.touched" class="text-danger">
+        Biografía es requerida.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="directoresForm.invalid">Actualizar Director</button>
+  </form>
+</div>

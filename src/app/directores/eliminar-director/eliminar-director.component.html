@@ -1,22 +1,14 @@
-<div class="container-fluid">
-    <div class="col-lg-6 offset-3">
-      <header>
-        <h3>Eliminar director</h3>
-      </header>
-      <section class="container">
-        <form [formGroup]="directorForm" (ngSubmit)="!directorForm.invalid && eliminarDirector(directorForm.value)">
-          <div class="row">
-            <div class="col col-12">
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="id">ID del director</label>
-                <input id="id" class="form-control" formControlName="id" readonly />
-              </div>
-            </div>
-          </div>
-          <br />
-          <button type="submit" class="btn btn-danger" [disabled]="!directorForm.valid">Eliminar</button>&nbsp;
-        </form>
-      </section>
+<div class="container">
+  <h2>Eliminar Director</h2>
+  <form [formGroup]="directorForm" (ngSubmit)="eliminarDirector(directorForm.value)">
+    <div class="form-group">
+      <label for="id">ID del Director</label>
+      <input id="id" type="text" class="form-control" formControlName="id" readonly>
     </div>
-  </div>
-  
+
+    <p>¿Estás seguro de que deseas eliminar este director?</p>
+
+    <button type="submit" class="btn btn-danger">Eliminar Director</button>
+    <a [routerLink]="['/director']" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>

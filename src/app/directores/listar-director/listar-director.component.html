@@ -1,27 +1,29 @@
-<div>
-    <h3>Listado de directores</h3>
-
-<div class="col-12">
+<div class="container">
+    <h2>Lista de Directores</h2>
     <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Nacionalidad</th>
-                <th>Fecha_de_nacimiento</th>
-                <th>Biografia</th>
-                <th>ID</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor= 'let d of directores'>
-                <td>{{d.Nombre}}</td>
-                <td>{{d.Nacionalidad}}</td>
-                <td>{{d.Fecha_de_nacimiento}}</td>
-                <td>{{d.Biografia}}</td>
-                <td>{{d.idDirector}}</td>
-                <td><button type="button" class="btn btn-primary" (click)="onEditarNavigate(a.idDirector)" title="Editar">Editar</button>&nbsp;</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Nacionalidad</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Biografía</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let director of directores">
+          <td>{{ director.idDirector }}</td>
+          <td>{{ director.nombre }}</td>
+          <td>{{ director.nacionalidad }}</td>
+          <td>{{ director.f_nacimiento | date }}</td>
+          <td>{{ director.biografia }}</td>
+          <td>
+            <button (click)="onEditarNavigate(director.idDirector)" class="btn btn-primary">Editar</button>
+            <button (click)="onEliminarNavigate(director.idDirector)" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
-</div>
-</div>
+  </div>
+  
