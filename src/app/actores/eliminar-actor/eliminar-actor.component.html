@@ -1,21 +1,14 @@
-<div class="container-fluid">
-    <div class="col-lg-6 offset-3">
-      <header>
-        <h3>Eliminar Actor</h3>
-      </header>
-      <section class="container">
-        <form [formGroup]="actorForm" (ngSubmit)="!actorForm.invalid && eliminarActor(actorForm.value)">
-          <div class="row">
-            <div class="col col-12">
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="id">ID del actor</label>
-                <input id="id" class="form-control" formControlName="id" readonly />
-              </div>
-            </div>
-          </div>
-          <br />
-          <button type="submit" class="btn btn-danger" [disabled]="!actorForm.valid">Eliminar</button>&nbsp;
-        </form>
-      </section>
+<div class="container">
+  <h2>Eliminar Actor</h2>
+  <form [formGroup]="actorForm" (ngSubmit)="eliminarActor(actorForm.value)">
+    <div class="form-group">
+      <label for="id">ID del Actor</label>
+      <input id="id" type="text" class="form-control" formControlName="id" readonly>
     </div>
-  </div>
+
+    <p>¿Estás seguro de que deseas eliminar este actor?</p>
+
+    <button type="submit" class="btn btn-danger">Eliminar Actor</button>
+    <a [routerLink]="['/actores']" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>

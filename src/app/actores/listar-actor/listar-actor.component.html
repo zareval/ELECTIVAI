@@ -1,27 +1,29 @@
-<div>
-    <h3>Listado de actores</h3>
-
-<div class="col-12">
+<div class="container">
+    <h2>Lista de Actores</h2>
     <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Nacionalidad</th>
-                <th>Fecha_de_nacimiento</th>
-                <th>Biografia</th>
-                <th>ID</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor= 'let a of actores'>
-                <td>{{a.Nombre}}</td>
-                <td>{{a.Nacionalidad}}</td>
-                <td>{{a.Fecha_de_nacimiento}}</td>
-                <td>{{a.Biografia}}</td>
-                <td>{{a.idActor}}</td>
-                <td><button type="button" class="btn btn-primary" (click)="onEditarNavigate(a.idActor)" title="Editar">Editar</button>&nbsp;</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Nacionalidad</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Biografía</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let actor of actores">
+          <td>{{ actor.idActor }}</td>
+          <td>{{ actor.nombre }}</td>
+          <td>{{ actor.nacionalidad }}</td>
+          <td>{{ actor.f_nacimiento | date }}</td>
+          <td>{{ actor.biografia }}</td>
+          <td>
+            <button (click)="onEditarNavigate(actor.idActor)" class="btn btn-primary">Editar</button>
+            <button (click)="onEliminarNavigate(actor.idActor)" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
-</div>
-</div>
+  </div>
+  
