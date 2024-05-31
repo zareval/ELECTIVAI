@@ -3,15 +3,16 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, ActivatedRoute } from '@angular/router';
 import { Series } from '../series';
 import { SeriesService } from '../series.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-editar-series',
+  selector: 'app-series-editar',
   standalone: true,
-  imports: [ReactiveFormsModule], // Assuming you're using Reactive Forms
-  templateUrl: './editar-series.component.html',
-  styleUrls: ['./editar-series.component.css']
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: './series-editar.component.html',
+  styleUrl: './series-editar.component.css'
 })
-export class seriesEditarComponent implements OnInit {
+export class SeriesEditarComponent implements OnInit {
   seriesForm!: FormGroup;
   series!: Series;
   idseries: string = '';

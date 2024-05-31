@@ -1,21 +1,14 @@
-<div class="container-fluid">
-    <div class="col-lg-6 offset-3">
-      <header>
-        <h3>Eliminar serie</h3>
-      </header>
-      <section class="container">
-        <form [formGroup]="serieForm" (ngSubmit)="!serieForm.invalid && eliminarserie(serieForm.value)">
-          <div class="row">
-            <div class="col col-12">
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="id">ID del serie</label>
-                <input id="id" class="form-control" formControlName="id" readonly />
-              </div>
-            </div>
-          </div>
-          <br />
-          <button type="submit" class="btn btn-danger" [disabled]="!serieForm.valid">Eliminar</button>&nbsp;
-        </form>
-      </section>
-    </div>
+<h1>Eliminar Serie</h1>
+
+<p>¿Está seguro que desea eliminar la serie?</p>
+
+<form [formGroup]="serieForm" (ngSubmit)="eliminarSerie(serieForm.value)">
+
+  <div class="form-group">
+    <label for="id">ID de la Serie (solo lectura):</label>
+    <input type="number" class="form-control" id="id" formControlName="id" readonly>
   </div>
+
+  <button type="submit" class="btn btn-danger">Eliminar Serie</button>
+  <a class="btn btn-secondary" [routerLink]="['/serie']">Cancelar</a>
+</form>

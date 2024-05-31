@@ -6,14 +6,14 @@ import { FormsModule } from '@angular/forms';
 import {Router, RouterModule} from '@angular/router';
 
 @Component({
-  selector: 'app-listar-pelicula',
+  selector: 'app-listar-serie',
   standalone: true,
   imports: [],
-  templateUrl: './listar-pelicula.component.html',
-  styleUrl: './listar-pelicula.component.css'
+  templateUrl: './listar-serie.component.html',
+  styleUrl: './listar-serie.component.css'
 })
 export class seriesListarComponent {
-  pelicula :Array<Series>=[]
+  serie :Array<Series>=[]
 a: any;
   constructor(private routerPath: Router,private seriesService:SeriesService){
 
@@ -25,8 +25,8 @@ a: any;
 
   listarPelicula(){
     this.seriesService.listarSeries().subscribe(vs=>{
-      this.pelicula=vs;
-      console.log(this.pelicula)
+      this.serie=vs;
+      console.log(this.serie)
     })
   }
 
