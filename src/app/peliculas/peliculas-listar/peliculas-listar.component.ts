@@ -1,37 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Peliculas } from '../peliculas';
 import { PeliculasService } from '../peliculas.service';
+import { Router, RouterModule } from '@angular/router';
 import { NgFor } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import {Router, RouterModule} from '@angular/router';
 
 @Component({
-  selector: 'app-listar-pelicula',
+  selector: 'app-peliculas-listar',
   standalone: true,
-  imports: [],
-  templateUrl: './listar-pelicula.component.html',
-  styleUrl: './listar-pelicula.component.css'
+  imports: [NgFor, RouterModule],
+  templateUrl: './peliculas-listar.component.html',
+  styleUrls: ['./peliculas-listar.component.css']
 })
-export class PeliculasListarComponent {
-  pelicula :Array<Peliculas>=[]
-a: any;
-  constructor(private routerPath: Router,private PeliculasService:PeliculasService){
+export class PeliculasListarComponent implements OnInit {
+  peliculas: Peliculas[] = [];
 
+  constructor(private router: Router, private peliculasService: PeliculasService) {}
+
+  ngOnInit(): void {
+    this.obtenerPeliculas();
   }
 
-  ngOnInit(){
-    this.listarPelicula();
+  obtenerPeliculas() {
+    this.peliculasService.listarPeliculas().subscribe(
+      peliculas => {
+        this.peliculas = peliculas;
+      },
+      error => {
+        console.error('Error al obtener las películas:', error);
+      }
+    );
   }
 
-  listarPelicula(){
-    this.PeliculasService.listarPeliculas().subscribe(vs=>{
-      this.pelicula=vs;
-      console.log(this.pelicula)
-    })
+  editarPelicula(idPeliculas: number) {
+    this.router.navigate(['/editarPelicula', idPeliculas]);
   }
-
-  onEditarNavigate(id:number){
-    this.routerPath.navigate([`/vehiculos/editar/${id}`]);
-  }
-
 }

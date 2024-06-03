@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PeliculasEliminarComponent } from './peliculas-eliminar.component';
+import { EliminarPeliculaComponent } from './peliculas-eliminar.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from '../../app.component';
 
@@ -16,17 +16,17 @@ describe('AppComponent',() =>{
     expect(app).toBeTruthy();
   })
 })
-describe('PeliculasEliminarComponent', () => {
-  let component: PeliculasEliminarComponent;
-  let fixture: ComponentFixture<PeliculasEliminarComponent>;
+describe('EliminarPeliculaComponent', () => {
+  let component: EliminarPeliculaComponent;
+  let fixture: ComponentFixture<EliminarPeliculaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PeliculasEliminarComponent]
+      imports: [EliminarPeliculaComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PeliculasEliminarComponent);
+    fixture = TestBed.createComponent(EliminarPeliculaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

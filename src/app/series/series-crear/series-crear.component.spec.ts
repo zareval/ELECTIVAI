@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { seriesCrearComponent } from './series-crear.component';
+import { SeriesCrearComponent } from './series-crear.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from '../../app.component';
 
@@ -17,16 +17,16 @@ describe('AppComponent',() =>{
   })
 })
 describe('seriesCrearComponent', () => {
-  let component: seriesCrearComponent;
-  let fixture: ComponentFixture<seriesCrearComponent>;
+  let component: SeriesCrearComponent;
+  let fixture: ComponentFixture<SeriesCrearComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [seriesCrearComponent]
+      imports: [SeriesCrearComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(seriesCrearComponent);
+    fixture = TestBed.createComponent(SeriesCrearComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

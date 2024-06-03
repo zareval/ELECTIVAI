@@ -4,10 +4,21 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, RouterOutlet],
+  imports: [RouterOutlet,RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
-  title = 'app-peliseries';
+
+editarPelicula(arg0: any) {
+throw new Error('Method not implemented.');
+}
+editarSerie(arg0: any) {
+throw new Error('Method not implemented.');
+}
+
+
+  title = 'IngesWeb';
+
 }

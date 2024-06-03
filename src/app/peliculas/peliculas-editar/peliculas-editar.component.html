@@ -1,52 +1,101 @@
-<h1>Editar Película</h1>
+<div class="container-fluid" *ngIf="peliculaForm">
+  <div class="col-lg-6 offset-lg-3">
+    <header class="text-center my-4">
+      <h3><strong>Actualizar Película</strong></h3>
+    </header>
+    <section class="container p-4 border rounded shadow">
+      <form [formGroup]="peliculaForm" (ngSubmit)="editarPelicula()">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group mx-sm-3 mb-4">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" class="form-control" formControlName="nombre" placeholder="Nombre de la película">
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('nombre')?.hasError('required') && peliculaForm.get('nombrePelicula')?.touched">
+                Campo requerido
+              </div>
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('nombrePelicula')?.hasError('minlength')">
+                El contenido es muy corto.
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-4">
+              <label for="genero">Género</label>
+              <input id="genero" class="form-control" formControlName="genero" maxlength="30" placeholder="Género">
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('genero')?.hasError('required') && peliculaForm.get('genero')?.touched">
+                Campo requerido
+              </div>
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('genero')?.hasError('minlength')">
+                El contenido es muy corto.
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-4">
+              <label for="duracion">Duración</label>
+              <input id="duracion" class="form-control" formControlName="duracion" maxlength="30" placeholder="Duración">
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('duracion')?.hasError('required') && peliculaForm.get('duracion')?.touched">
+                Campo requerido
+              </div>
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('duracion')?.hasError('minlength')">
+                El contenido es muy corto.
+              </div>
+            </div>
 
-<form [formGroup]="PeliculasForm" (ngSubmit)="actualizarPeliculas(PeliculasForm.value)">
-
-  <div class="form-group">
-    <label for="nombre">Nombre:</label>
-    <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Ingrese el nombre">
+            <div class="form-group mx-sm-3 mb-4">
+              <label for="pais">País</label>
+              <input id="pais" class="form-control" formControlName="pais" maxlength="100" placeholder="País">
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('pais')?.hasError('required') && peliculaForm.get('pais')?.touched">
+                Campo requerido
+              </div>
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('pais')?.hasError('minlength')">
+                El contenido es muy corto.
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-4">
+              <label for="f_estreno">Fecha de Estreno</label>
+              <input id="f_estreno" class="form-control" formControlName="f_estreno" maxlength="10" placeholder="Fecha de estreno">
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('f_estreno')?.hasError('required') && peliculaForm.get('f_estreno')?.touched">
+                Campo requerido
+              </div>
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('f_estreno')?.hasError('minlength')">
+                El contenido es muy corto.
+              </div>
+            </div>
+            
+            <div class="form-group mx-sm-3 mb-4">
+              <label for="trailer">trailer</label>
+              <input id="trailer" class="form-control" formControlName="trailer" maxlength="2000" placeholder="URL Poster">
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('trailer')?.hasError('required') && peliculaForm.get('trailer')?.touched">
+                Campo requerido
+              </div>
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('trailer')?.hasError('minlength')">
+                El contenido es muy corto.
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-4">
+              <label for="e_produccion">E_produccion</label>
+              <input id="e_produccion" class="form-control" formControlName="e_produccion" maxlength="2000" placeholder="URL de la imagen">
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('e_produccion')?.hasError('required') && peliculaForm.get('e_produccion')?.touched">
+                Campo requerido
+              </div>
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('e_produccion')?.hasError('minlength')">
+                El contenido es muy corto.
+              </div>
+            </div>
+            <div class="form-group mx-sm-3 mb-4">
+              <label for="poster">Poster</label>
+              <input id="poster" class="form-control" formControlName="poster" maxlength="2000" placeholder="URL de la imagen">
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('poster')?.hasError('required') && peliculaForm.get('poster')?.touched">
+                Campo requerido
+              </div>
+              <div class="alert alert-danger mt-2" *ngIf="peliculaForm.get('poster')?.hasError('minlength')">
+                El contenido es muy corto.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary m-2" [disabled]="!peliculaForm.valid">Actualizar</button>
+          <button type="button" class="btn btn-danger m-2" (click)="eliminarPelicula()">Eliminar Película</button>
+        </div>
+      </form>
+    </section>
   </div>
-
-  <div class="form-group">
-    <label for="genero">Género:</label>
-    <input type="text" class="form-control" id="genero" formControlName="genero" placeholder="Ingrese el género">
-  </div>
-
-  <div class="form-group">
-    <label for="duracion">Duración (minutos):</label>
-    <input type="number" class="form-control" id="duracion" formControlName="duracion" placeholder="Ingrese la duración">
-  </div>
-
-  <div class="form-group">
-    <label for="pais">País:</label>
-    <input type="text" class="form-control" id="pais" formControlName="pais" placeholder="Ingrese el país">
-  </div>
-
-  <div class="form-group">
-    <label for="f_estreno">Fecha de estreno (YYYY-MM-DD):</label>
-    <input type="date" class="form-control" id="f_estreno" formControlName="f_estreno" placeholder="Ingrese la fecha">
-  </div>
-
-  <div class="form-group">
-    <label for="trailer">Trailer URL:</label>
-    <input type="url" class="form-control" id="trailer" formControlName="trailer" placeholder="Ingrese la URL del trailer">
-  </div>
-
-  <div class="form-group">
-    <label for="poster">Poster URL:</label>
-    <input type="url" class="form-control" id="poster" formControlName="poster" placeholder="Ingrese la URL del poster">
-  </div>
-
-  <div class="form-group">
-    <label for="director">Director:</label>
-    <input type="text" class="form-control" id="director" formControlName="director" placeholder="Ingrese el director">
-  </div>
-
-  <div class="form-group">
-    <label for="protagonistas">Protagonistas (separados por comas):</label>
-    <textarea class="form-control" id="protagonistas" formControlName="protagonistas" rows="3"></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Actualizar Película</button>
-
-</form>
+</div>

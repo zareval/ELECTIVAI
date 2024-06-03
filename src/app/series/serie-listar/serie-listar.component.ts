@@ -1,37 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Series } from '../series';
 import { SeriesService } from '../series.service';
+import { Router, RouterModule } from '@angular/router';
 import { NgFor } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import {Router, RouterModule} from '@angular/router';
 
 @Component({
-  selector: 'app-listar-serie',
+  selector: 'app-series-listar',
   standalone: true,
-  imports: [],
-  templateUrl: './listar-serie.component.html',
-  styleUrl: './listar-serie.component.css'
+  imports: [NgFor, RouterModule],
+  templateUrl: './serie-listar.component.html',
+  styleUrls: ['./serie-listar.component.css']
 })
-export class seriesListarComponent {
-  serie :Array<Series>=[]
-a: any;
-  constructor(private routerPath: Router,private seriesService:SeriesService){
+export class SeriesListarComponent implements OnInit {
+  series: Series[] = [];
 
+  constructor(private router: Router, private seriesService: SeriesService) {}
+
+  ngOnInit(): void {
+    this.obtenerSeries();
   }
 
-  ngOnInit(){
-    this.listarPelicula();
+  obtenerSeries() {
+    this.seriesService.listarSeries().subscribe(
+      series => {
+        this.series = series;
+      },
+      error => {
+        console.error('Error al obtener las Series:', error);
+      }
+    );
   }
 
-  listarPelicula(){
-    this.seriesService.listarSeries().subscribe(vs=>{
-      this.serie=vs;
-      console.log(this.serie)
-    })
+  editarSerie(idSeries: number) {
+    this.router.navigate(['/editarSerie', idSeries]);
   }
-
-  onEditarNavigate(id:number){
-    this.routerPath.navigate([`/vehiculos/editar/${id}`]);
-  }
-
 }

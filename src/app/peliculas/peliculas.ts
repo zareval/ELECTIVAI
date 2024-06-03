@@ -3,16 +3,14 @@ export class Peliculas{
     genero : string;
     duracion : string;
     pais : string;
-    f_estreno : number;
-    trailer : URL;
-    e_produccion : URL;
-    poster : File| null | undefined;
-    director : string;
-    protagonistas : string;
-    idPelicula : number;
+    f_estreno : string;
+    trailer : string;
+    e_produccion : string;
+    poster : string;
+    id : number;
+    
 
-
-    public constructor (idPelicula:number,nombre:string,genero:string,duracion : string,pais : string,f_estreno : number,trailer : URL,e_produccion : URL,poster : File,director : string,protagonistas : string){
+    public constructor (id:number,nombre:string,genero:string,duracion : string,pais : string,f_estreno : string,trailer :string,e_produccion : string,poster : string){
         
         this.nombre = nombre;
         this.genero = genero;
@@ -22,9 +20,7 @@ export class Peliculas{
         this.trailer = trailer;
         this.e_produccion = e_produccion;
         this.poster = poster;
-        this.director = director;
-        this.protagonistas = protagonistas;
-        this.idPelicula = idPelicula;
+        this.id = id;
 
 
 

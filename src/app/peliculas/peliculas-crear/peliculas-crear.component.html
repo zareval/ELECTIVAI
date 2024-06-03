@@ -14,7 +14,7 @@
 
   <div class="form-group">
     <label for="duracion">Duración (minutos):</label>
-    <input type="number" class="form-control" id="duracion" formControlName="duracion" placeholder="Ingrese la duración">
+    <input type="text" class="form-control" id="duracion" formControlName="duracion" placeholder="Ingrese la duración">
   </div>
 
   <div class="form-group">
@@ -24,29 +24,24 @@
 
   <div class="form-group">
     <label for="f_estreno">Fecha de estreno (YYYY-MM-DD):</label>
-    <input type="date" class="form-control" id="f_estreno" formControlName="f_estreno" placeholder="Ingrese la fecha">
+    <input type="text" class="form-control" id="f_estreno" formControlName="f_estreno" placeholder="Ingrese la fecha">
   </div>
 
   <div class="form-group">
     <label for="trailer">Trailer URL:</label>
-    <input type="url" class="form-control" id="trailer" formControlName="trailer" placeholder="Ingrese la URL del trailer">
+    <input type="text" class="form-control" id="trailer" formControlName="trailer" placeholder="Ingrese la URL del trailer">
+  </div>
+
+  <div class="form-group">
+    <label for="e_produccion">E_produccion:</label>
+    <input type="text" class="form-control" id="e_produccion" formControlName="e_produccion" placeholder="e_producion">
   </div>
 
   <div class="form-group">
     <label for="poster">Poster URL:</label>
-    <input type="url" class="form-control" id="poster" formControlName="poster" placeholder="Ingrese la URL del poster">
+    <input type="text" class="form-control" id="poster" formControlName="poster" placeholder="Ingrese la URL del poster">
   </div>
 
-  <div class="form-group">
-    <label for="director">Director:</label>
-    <input type="text" class="form-control" id="director" formControlName="director" placeholder="Ingrese el director">
-  </div>
-
-  <div class="form-group">
-    <label for="protagonistas">Protagonistas (separados por comas):</label>
-    <textarea class="form-control" id="protagonistas" formControlName="protagonistas" rows="3"></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Crear Película</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!peliculasForm.valid">Crear</button>&nbsp;
 
 </form>

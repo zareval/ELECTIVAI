@@ -1,35 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PeliculasEditarComponent } from './peliculas-editar.component';
-import {RouterTestingModule} from '@angular/router/testing'
-import { AppComponent } from '../../app.component';
+import { EditarPeliculaComponent } from './peliculas-editar.component';
 
-
-describe('AppComponent',() =>{
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations:[AppComponent]
-  }));
-
-  it('should create the app', () =>{
-    const fixture = TestBed.createComponent(AppComponent);
-    const app= fixture.componentInstance;
-    expect(app).toBeTruthy();
-  })
-})
-
-
-describe('PeliculasEditarComponent', () => {
-  let component: PeliculasEditarComponent;
-  let fixture: ComponentFixture<PeliculasEditarComponent>;
+describe('EditarPeliculaComponent', () => {
+  let component: EditarPeliculaComponent;
+  let fixture: ComponentFixture<EditarPeliculaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PeliculasEditarComponent]
+      imports: [EditarPeliculaComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PeliculasEditarComponent);
+    fixture = TestBed.createComponent(EditarPeliculaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

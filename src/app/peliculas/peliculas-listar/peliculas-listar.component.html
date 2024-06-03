@@ -1,27 +1,103 @@
-<h1>Listado de Películas</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Series</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #131313; /* Fondo azul claro */
+            color: #fff; /* Texto en blanco */
+            font-family: 'Arial', sans-serif;
+        }
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #fff; /* Blanco */
+            text-align: center;
+            font-size: 2.5em;
+        }
+       .card {
+            background-color: #464646; /* Fondo blanco */
+            border: 1px solid #87CEEB; /* Borde azul claro */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+       .card:hover {
+            transform: translateY(-13px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+       .card-body {
+            padding: 20px;
+        }
+       .btn-primary {
+            background-color: #87CEEB; /* Azul claro */
+            border-color: #87CEEB; /* Azul claro */
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+       .btn-primary:hover {
+            background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+            border-color: #0056b3; /* Azul más oscuro */
+        }
+       .btn-primary:focus {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.6); /* Sombra azul */
+        }
+       .card-title {
+            color: #fff; /* Blanco */
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+       .card-text {
+            color: #ccc; /* Texto gris claro */
+        }
+       .image-container {
+            width: 100%; /* Establece el ancho del contenedor */
+            height: 300px; /* Establece la altura deseada */
+            overflow: hidden; /* Evita que las imágenes desborden el contenedor */
+            display: flex; /* Utiliza Flexbox para alinear elementos */
+            justify-content: center; /* Centra horizontalmente las imágenes */
+            align-items: center; /* Centra verticalmente las imágenes */
+        }
+        
+       .card-img-top {
+            width: auto; /* Establece el ancho de la imagen para que se ajuste al contenedor */
+            height: 100%; /* Establece la altura de la imagen para que se ajuste al contenedor */
+            display: block; /* Elimina el espacio adicional debajo de las imágenes */
+            object-fit: cover; /* Escala la imagen para que se ajuste al contenedor sin distorsión, cubriendo el área visible */
+        }
+    </style>
+</head>
+<body>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Género</th>
-      <th>Duración</th>
-      <th>País</th>
-      <th>Fecha de estreno</th>
-      <th>Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let pelicula of pelicula">
-      <td>{{ pelicula.idPelicula }}</td> <td>{{ pelicula.nombre }}</td>
-      <td>{{ pelicula.genero }}</td>
-      <td>{{ pelicula.duracion }} minutos</td>
-      <td>{{ pelicula.pais }}</td>
-      <td>{{ pelicula.f_estreno }}</td>
-      <td>
-        <button class="btn btn-primary" (click)="onEditarNavigate(pelicula.idPelicula)">Editar</button>
-        <button class="btn btn-danger">Eliminar</button> </td>
-    </tr>
-  </tbody>
-</table>
+    <div class="container-fluid">
+        <h3><strong>Lista de Películas</strong></h3>
+        <div class="row">
+            <!-- Bucle para generar una tarjeta por cada película -->
+            <div class="col-md-4" *ngFor="let p of peliculas">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.nombre }}</h5>
+                        <div class="image-container items-center">
+                            <img class="card-img-top" [src]="p.poster" alt="Imagen de {{ p.nombre }}">
+                        </div>
+                        <p class="card-text"><strong>Duración:</strong> {{ p.duracion }}</p>
+                        <p class="card-text"><strong>Género:</strong> {{ p.genero }}</p>
+                        <p class="card-text"><strong>Fecha de Estreno:</strong> {{ p.f_estreno }}</p>
+                        <p class="card-text"><strong>País:</strong> {{ p.pais }}</p>
+                        <button type="button" class="btn btn-primary" (click)="editarPelicula(p.id)" title="Editar">Editar</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
